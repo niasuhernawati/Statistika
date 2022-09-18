@@ -1,0 +1,4 @@
+data_nia = read.delim("clipboard")
+View(data_nia)
+mean(data_nia$Tinggi.Badan)
+str(data_nia)
