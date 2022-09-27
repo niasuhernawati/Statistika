@@ -1,0 +1,45 @@
+#1. TIPE DATA
+a <- c(1,2,-5,0.3,6,-2,4) # numeric vector
+b <- c("one","two","three") # character vector
+c <- c(TRUE,TRUE,TRUE,FALSE,TRUE) #logical vector
+print(a)
+print(b)
+print(c)
+
+#MATRIKS
+cells <- c(3,15,-27,38)
+r_nia <- c("R1", "R2")
+c_nia <- c("C1", "C2") 
+nia_matrix <- matrix(cells, nrow=2, ncol=2, byrow=TRUE,
+                      dimnames=list(r_nia, c_nia))
+print(nia_matrix)
+
+#DATA FRAME
+nia1 <- c(1,2,3,4)
+nia2 <- c("red", "white", "red", NA)
+nia3 <- c(TRUE,TRUE,TRUE,FALSE)
+dataku <- data.frame(nia1, nia2, nia3)
+names(dataku) <- c("ID","Color","Passed") # variable names 
+print(dataku)
+
+data_nia <- data.frame(id = letters[1:10], x = 1:10, y = 11:20)
+print (data_nia)
+
+install.packages("RMySQL")
+install.packages("dplyr")
+
+#2. KONEKSI KE DATABASE
+library(RMySQL)
+con = dbConnect(MySQL(), user = 'root', password = '', dbname = 'houseprices', host = 'localhost')
+dbListTables(con) 
+myQuery <- "select * from nia;"
+df <- dbGetQuery(con, myQuery)
+
+#3. TEKNIK FILTER DATA
+library(dplyr)
+df<-filter(df,Brick=="No")
+print(df)
+
+library(dplyr)
+df<-filter(df,Brick=="No", Neighborhood=="East")
+print(df)
