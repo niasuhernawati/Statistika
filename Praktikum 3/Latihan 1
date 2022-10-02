@@ -1,0 +1,34 @@
+data_nia = read.csv("C:/Users/ASUS/Documents/prakstatistika/houseprices.csv")
+View(data_nia)
+
+nia <- data_nia[data_nia$Bedrooms==2,]  
+View(nia)
+
+nia$Bathrooms <- ifelse(nia$Bathrooms > 2, c("large"), c("small"))
+View(nia)
+
+nia$newvariable <- ifelse(nia$Offers > 2, c("large"), c("small")) 
+View(nia)
+
+nia$newvariable <- nia$Price/nia$SqFt
+View(nia)
+
+nia$newvariable<-NULL
+View(nia)
+
+data_nia.kolom1dan2 <- data_nia[,1:2] 
+View(data_nia.kolom1dan2)
+
+data_nia.kolom3dan4 <- data_nia[,3:4] 
+View(data_nia.kolom3dan4)
+
+data_nia.kolom1sd4<-cbind(data_nia.kolom1dan2, data_nia.kolom3dan4) 
+View(data_nia.kolom1sd4)
+
+data_nia.baris1sd3 <- data_nia[1:3,] 
+data_nia.baris4sd6 <- data_nia[4:6,] 
+data_nia.baris1sd6 <- rbind(data_nia.baris1sd3, data_nia.baris4sd6) 
+View(data_nia.baris1sd6)
+
+data_nia.sort<-data_nia[order(data_nia$Price),] 
+View(data_nia.sort)
