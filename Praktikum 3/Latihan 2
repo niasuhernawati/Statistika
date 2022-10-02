@@ -1,0 +1,34 @@
+data_nia = read.csv("C:/Users/ASUS/Documents/prakstatistika/DataPraktikum1Nia.csv")
+View(data_nia)
+
+nia <- data_nia[4]  
+View(nia)
+
+nia$Tinggi.Badan <- ifelse(nia$Tinggi.Badan > 160, c("tinggi"), c("pendek"))
+View(nia)
+
+nia$Jurusan <- c("Infor21") 
+View(nia)
+
+nia$Fakultas <- c("FTI") 
+View(nia)
+
+nia$Fakultas<-NULL
+View(nia)
+
+data_nia.kolom1dan2 <- data_nia[,1:2] 
+View(data_nia.kolom1dan2)
+
+data_nia.kolom3dan4 <- data_nia[,3:4] 
+View(data_nia.kolom3dan4)
+
+data_nia.kolom1sd4<-cbind(data_nia.kolom1dan2, data_nia.kolom3dan4) 
+View(data_nia.kolom1sd4)
+
+data_nia.baris1sd5 <- data_nia[1:5,] 
+data_nia.baris25sd30 <- data_nia[25:30,] 
+data_nia.baris1sd30 <- rbind(data_nia.baris1sd5, data_nia.baris25sd30) 
+View(data_nia.baris1sd30)
+
+data_nia.sort<-data_nia[order(data_nia$Waktu.Perjalanan),] 
+View(data_nia.sort)
