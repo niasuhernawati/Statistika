@@ -1,0 +1,4 @@
+nia=read.delim("clipboard")
+View(nia)
+
+t.test(nia$Volume, conf.level = 0.5)
