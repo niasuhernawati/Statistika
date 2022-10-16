@@ -1,0 +1,5 @@
+nia = read.delim("clipboard")
+View(nia)
+str(nia)
+mean(nia$Volume)
+t.test(nia$Volume, mu=10)
