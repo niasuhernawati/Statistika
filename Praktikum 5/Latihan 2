@@ -1,0 +1,5 @@
+nia = read.delim("clipboard")
+View(nia)
+str(nia)
+mean(nia$Pendapatan)
+t.test(nia$Pendapatan, mu=14500)
