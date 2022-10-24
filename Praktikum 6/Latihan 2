@@ -1,0 +1,10 @@
+nia = read.csv("C:/Users/ASUS/Documents/prakstatistika/DirectMarketing.csv")
+hist(nia$AmountSpent)
+d=density(nia$AmountSpent)
+plot(d)
+
+install.packages("ggplot2")
+library(ggplot2)
+nia = read.csv("C:/Users/ASUS/Documents/prakstatistika/houseprices.csv")
+qplot(nia$Price, nia$SqFt)
+plot(nia$Price, nia$SqFt)
