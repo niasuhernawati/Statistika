@@ -1,0 +1,31 @@
+from google.colab import files
+import pandas as pd
+
+uploaded = files.upload()
+
+data = pd.read_csv('/content/houseprice.csv')
+
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.model_selection import train_test_split, cross_val_score, KFold, GridSearchCV
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier,export_graphviz
+from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+
+data_nia = pd.read_csv('/content/houseprice.csv')
+data_nia.head(5)
+
+col_list=['Price', 'Bedrooms']
+numhouse = data_nia[data_nia.columns[data_nia.columns.isin(col_list)]]
+numhouse.plot.scatter(x='Bedrooms', y='Price')
+
+col_list=['Price', 'Bathrooms']
+numhouse = data_nia[data_nia.columns[data_nia.columns.isin(col_list)]]
+numhouse.plot.scatter(x='Bathrooms', y='Price')
+
+col_list=['Price', 'Bathrooms']
+numhouse = data_nia[data_nia.columns[data_nia.columns.isin(col_list)]]
+plt.figure(figsize=(15,5))
+numhouse.boxplot(by='Bathrooms')
+plt.show()
