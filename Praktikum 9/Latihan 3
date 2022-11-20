@@ -1,0 +1,7 @@
+#latihan ketiga - Tugas II
+pnorm(150, 165, 6)
+
+1-pnorm(170, 165, 6)
+
+pnorm(180, 165,6) - pnorm(150, 165,6)
+pnorm(2, 7, 0.9875807)
