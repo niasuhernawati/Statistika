@@ -1,0 +1,4 @@
+#latihan keempat - Tugas III
+pnorm(158, 175, 30) - pnorm(125, 175, 30)
+
+pnorm(150, 175, 30, lower.tail = FALSE)
