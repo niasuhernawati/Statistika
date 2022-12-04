@@ -1,0 +1,8 @@
+df_nia=PlantGrowth
+View(df_nia)
+
+model <- aov(weight~group, data=df_nia)
+summary(model)
+
+tukey.test <- TukeyHSD(model)
+tukey.test
