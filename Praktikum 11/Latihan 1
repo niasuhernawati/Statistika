@@ -1,0 +1,9 @@
+df_nia=read.delim("clipboard")
+head(df_nia)
+
+
+model <- aov(korosi~metode, data=df_nia)
+summary(model)
+
+tukey.test <- TukeyHSD(model)
+tukey.test
