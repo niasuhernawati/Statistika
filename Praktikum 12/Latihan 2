@@ -1,0 +1,10 @@
+df_nia=read.delim("clipboard")
+df_nia$brick_dummy <- ifelse(df_nia$Brick == "Yes", 1,0)
+df_nia$N_dummy1 <- ifelse(df_nia$Neighborhood =="West", 1,0)
+df_nia$N_dummy2 <- ifelse(df_nia$Neighborhood =="North", 1,0)
+model =lm(df_nia$Price~df_nia$SqFt+df_nia$Bedrooms+df_nia$Bathrooms+df_nia$brick_dummy+df_nia$N_dummy1+df_nia$N_dummy2)
+summary(model)
+
+
+by(df_nia$Price, df_nia$Neighborhood, mean)
+by(df_nia$Price, df_nia$Brick, mean)
