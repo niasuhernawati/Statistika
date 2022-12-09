@@ -1,0 +1,4 @@
+df_nia=read.delim("clipboard")
+head(df_nia)
+model_reg=lm(df_nia$Y~df_nia$X)
+summary(model_reg)
