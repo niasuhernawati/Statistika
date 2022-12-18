@@ -1,0 +1,7 @@
+dataku_nia = read.delim('clipboard')
+View(dataku_nia)
+wilcox.test(dataku_nia$Sebelum,dataku_nia$Setelah,paired=TRUE)
+
+data_nia = read.delim('clipboard')
+View(data_nia)
+wilcox.test(data_nia$Sebelum,data_nia$Sesudah,paired=TRUE)
