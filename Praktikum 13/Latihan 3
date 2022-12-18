@@ -1,0 +1,11 @@
+data_nia = read.delim('clipboard')
+head (data_nia)
+wilcox.test(data_nia$ganjil,data_nia$genap,paired=TRUE)
+rank(data_nia$ganjil)
+rank(data_nia$genap)
+
+data_nia = read.delim('clipboard')
+head(data_nia)
+wilcox.test(data_nia$caffeine,data_nia$placebo,paired=TRUE)
+rank(data_nia$caffeine)
+rank(data_nia$placebo)
