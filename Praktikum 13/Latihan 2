@@ -1,0 +1,6 @@
+df_nia=read.delim('clipboard')
+# independent 2-group Mann-Whitney U Test
+wilcox.test(df_nia$obat~df_nia$grup)
+# where y is numeric and A is A binary factor
+head(df_nia)
+rank(df_nia$obat)
